@@ -1,5 +1,6 @@
 local colors = {
   white      = "#cecece",
+  -- white      = "#C6A969",
   visual     = "#126367",
 
   error      = "#d13e23",
@@ -12,6 +13,7 @@ local colors = {
   keyword    = "#708b8d",
   def_fg     = "#71ade7",
   const_fg   = "#cc8bc9",
+  boolean    = "#87ffde",
   active     = "#cd974b",
   string     = "#95cb82",
   comment    = "#53d549",
@@ -19,6 +21,7 @@ local colors = {
   number     = "#cc8bc9",
   type       = "#d0b892",
   tag        = "#d3b58e",
+  retrn      = "#d3b58e",
 
   orange     = "#FD971F", -- Not used
 
@@ -38,11 +41,14 @@ local set = vim.api.nvim_set_hl
 
 set(0, "Normal",           { fg = colors.white, bg = colors.background })
 
+set(0, "LineNr",           { fg = "#A1EFE4", bg = colors.background })
+set(0, "CursorLineNr",     { fg = colors.type, bg = colors.background })
+
 
 set(0, "Comment",             { fg = colors.comment })
 set(0, "String",              { fg = colors.string })
 set(0, "Number",              { fg = colors.number })
-set(0, "Boolean",             { fg = colors.white })
+set(0, "Boolean",             { fg = colors.boolean })
 set(0, "Constant",            { fg = colors.white })
 set(0, "Identifier",          { fg = colors.white })
 set(0, "Function",            { fg = colors.white })
@@ -66,16 +72,16 @@ set(0, "@function",              { link = "Function" })
 set(0, "@function.builtin",      { link = "Function" })
 set(0, "@variable",              { link = "Identifier" })
 set(0, "@type",                  { link = "Type" })
-set(0, "@tag.builtin",           { fg = colors.tag })
+set(0, "@tag.builtin",           { fg   = colors.tag })
 set(0, "@keyword",               { link = "Keyword" })
-set(0, "@keyword.return",        { fg = "#66D9EF" })
+set(0, "@keyword.return",        { fg   = colors.retrn })
 set(0, "@keyword.function",      { link = "Keyword" })
 set(0, "@field",                 { link = "Identifier" })
 set(0, "@property",              { link = "Identifier" })
 set(0, "@parameter",             { link = "Constant" })
 set(0, "@punctuation.delimiter", { link = "OPerator" })
-set(0, "@punctuation.bracket",   { fg = "#bababa" })
-set(0, "Visual",                 { bg = colors.visual })
+set(0, "@punctuation.bracket",   { fg   = "#bababa" })
+set(0, "Visual",                 { bg   = colors.visual })
 
 -- Diagnostics
 set(0, "DiagnosticError",       { fg = colors.error })
