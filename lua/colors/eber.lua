@@ -9,6 +9,7 @@ local colors = {
   bg         = "#062625",
   fg         = "#cecece",
   keyword    = "#708b8d",
+  lineNumber = "#727169",
   def_fg     = "#71ade7",
   const_fg   = "#cc8bc9",
   boolean    = "#cc8bc9",
@@ -37,7 +38,7 @@ local set = vim.api.nvim_set_hl
 
 set(0, "Normal",           { fg = colors.white, bg = colors.background })
 
-set(0, "LineNr",           { fg = "#A1EFE4", bg = colors.background })
+set(0, "LineNr",           { fg = colors.lineNumber, bg = colors.background })
 set(0, "CursorLineNr",     { fg = colors.type, bg = colors.background })
 
 
@@ -50,6 +51,8 @@ set(0, "Identifier",          { fg = colors.white })
 set(0, "Function",            { fg = colors.white })
 set(0, "Statement",           { fg = colors.white })
 set(0, "Keyword",             { fg = colors.white })
+set(0, "Include",             { fg = colors.white })
+set(0, "PreProc",             { fg = colors.white })
 set(0, "Type",                { fg = colors.type })
 set(0, "Operator",            { fg = colors.keyword })
 set(0, "Character",           { fg = colors.keyword })
